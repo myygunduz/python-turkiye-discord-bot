@@ -1,0 +1,31 @@
+- Genel -
+yardım              Komutları ve amaçlarını gösterir
+kullanım            Bir komutun nasıl kullanılacağını gösterir
+profil              Sunucudaki profilinizi gösterir
+avatar              Birinin profil resmini gösterir
+bot                 Bot hakkında bilgi verir
+sunucu              Sunucu hakkında bilgi verir
+üye                 Bir üye hakkında bilgi verir
+top15               En yüksek seviyeli 15 kişiyi listeler
+döviz               Parayı güncel döviz kuruna göre çevirir
+covid               Güncel koronavirüs durumunu gösterir
+wiki                Wikipedia araması yapar
+
+- Eğlence -
+
+
+- Yetkili -
+duyuru              Sunucudaki herkese mesajı duyurur
+temizle             Verilen miktarda mesajı siler
+gag                 Bir üyeye chat engeli koyar
+ungag               Bir üyenin chat engelini kaldırır
+kick                Bir üyeyi sunucudan atar
+ban                 Bir üyeyi sunucudan süresiz yasaklar
+say                 Bir kanala istenilen mesajı gönderir
+embed               Bir kanala verilen embedi gönderir
+xp                  Bir kullanıcının XP puanını düzenler
+
+- Debugging -
+uptime              Botun ne zamandır çalıştığını gösterir
+veritabanı durum    Veritabanı durumunu gösterir
+debug <komut>       Debug komutu çalıştırır
