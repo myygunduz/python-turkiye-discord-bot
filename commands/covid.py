@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import discord
 import utils
 from libs import covidapi
@@ -17,9 +19,13 @@ async def run(client, message, args, prefix, db):
 
     embed = discord.Embed(title=title, color=utils.COLOR_COVID)
     embed.set_thumbnail(url="https://i.imgur.com/ZHNq1fi.png")
-    embed.add_field(name="__Vaka__", value=f"Yeni: `{j['NewConfirmed']}`\nToplam: `{j['TotalConfirmed']}`", inline=True)
-    embed.add_field(name="__Ölüm__", value=f"Yeni: `{j['NewDeaths']}`\nToplam: `{j['TotalDeaths']}`", inline=True)
-    embed.add_field(name="__İyileşen__", value=f"Yeni: `{j['NewRecovered']}`\nToplam: `{j['TotalRecovered']}`", inline=True)
-    if "Date" in j: embed.set_footer(text=f"En son {j['Date']} tarihinde güncellendi")
+    embed.add_field(name="__Vaka__", value=f"Yeni: `{j['NewConfirmed']:,}`\nToplam: `{j['TotalConfirmed']:,}`", inline=True)
+    embed.add_field(name="__Ölüm__", value=f"Yeni: `{j['NewDeaths']:,}`\nToplam: `{j['TotalDeaths']:,}`", inline=True)
+    embed.add_field(name="__İyileşen__", value=f"Yeni: `{j['NewRecovered']:,}`\nToplam: `{j['TotalRecovered']:,}`", inline=True)
+    if "Date" in j:
+        date_format = "%Y-%m-%dT%H:%M:%S.%fZ"
+        date = datetime.strptime(j['Date'], date_format)
+
+        embed.set_footer(text=f"En son {date.strftime('%d.%m.%Y %H:%M')} tarihinde güncellendi")
 
     await message.channel.send(embed=embed)
