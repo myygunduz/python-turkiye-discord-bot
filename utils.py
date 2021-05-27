@@ -2,7 +2,7 @@ import discord
 import time
 
 
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 
 POSITIVE = "<:positive:715519331655483462>"
 NEGATIVE = "<:negative:715519331768729684>"
