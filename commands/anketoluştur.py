@@ -5,16 +5,13 @@ async def run(client, message, args, prefix, db):
         if m.channel == message.channel and m.author.id == client.author.id:
             return m
 
-    async def sendMessage(channel,m):
-        await channel.send(m)
-
     settings = {
         'message':'',
         'author':message.author.id,
         'emojis':[],
         'emojiWaitMessage':''}
 
-    sendMessage(client,"Anket mesajını girin:")
+    await client.send("Anket mesajını girin:")
 
     msg = await client.wait_for("message", check=waitMessage, timeout=30)
 
