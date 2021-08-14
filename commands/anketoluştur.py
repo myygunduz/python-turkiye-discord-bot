@@ -5,7 +5,7 @@ async def run(client, message, args, prefix, db):
         if m.channel == message.channel and m.author.id == client.author.id:
             return m
 
-    def sendMessage(channel,m):
+    async def sendMessage(channel,m):
         await channel.send(m)
 
     settings = {
