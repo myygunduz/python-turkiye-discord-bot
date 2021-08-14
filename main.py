@@ -10,7 +10,6 @@ import utils
 from libs.db import RedisWrapper
 from libs import covidapi
 import wikipedia
-from libs.jsonHelper import writeJ, readJ
 
 
 db = RedisWrapper()
@@ -64,15 +63,9 @@ async def on_member_remove(member):
 @client.event
 async def on_reaction_add(reaction, user):
     if user.bot: return
-    poll = readJ('data/polls.json')
-    for i in poll['formed']:
-        
+    for i in utils.POOLSDICT:
         if int(user.id) == i['author'] and reaction.message.content == i['emojiWaitMessage']:
-            
             i['emojis'].append(reaction.emoji)
-
-            writeJ(poll,'data/polls.json')
-
 
     # Wikipedia mesajına verilen reaction
     if reaction.message in utils.WIKI_MESAJ:

@@ -34,6 +34,8 @@ LEVEL5 = None
 LEVEL6 = None
 LEVEL7 = None
 
+POOLSDICT = {}
+
 
 def update_levels(guild):
     global LEVEL1, LEVEL2, LEVEL3, LEVEL4, LEVEL5, LEVEL6, LEVEL7
